@@ -27,17 +27,10 @@ namespace JuegoDeLaVidaLib
         private bool generarCelda(bool[,] tableroBase, int posX, int posY, bool estado)
         {
             char tipo = obtenerTipo(tableroBase, posX, posY, estado);
-            if (tipo.Equals(TIPO_VIVA_CONMENOSDEDOSVECINASVIVAS_MUERE))
-                return false;
-            if (tipo.Equals(TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE))
+            if (tipo.Equals(TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE) || tipo.Equals(TIPO_MUERTA_CONTRESVECINASVIVAS_VIVE))
                 return true;
-            if (tipo.Equals(TIPO_VIVA_CONMASDETRESVECINASVIVAS_MUERE))
+            else
                 return false;
-            if (tipo.Equals(TIPO_MUERTA_CONTRESVECINASVIVAS_VIVE))
-                return true;
-            if (tipo.Equals(TIPO_MUERTA_CONDIFERENTEDETRESVECINASVIVAS_MUERE))
-                return false;
-            return estado;
         }
         public bool[,] generar(bool[,] tableroBase, int posX, int posY, bool estado)
         {
