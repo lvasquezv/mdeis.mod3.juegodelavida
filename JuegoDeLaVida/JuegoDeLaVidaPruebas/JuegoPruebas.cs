@@ -1,20 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using NUnit.Framework;
 
-namespace Tests
+namespace JuegoDeLaVidaPruebas
 {
     public class JuegoPruebas
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void CelulaViva_conMenosDeDosVecinasVivas()
         {
             JuegoDeLaVidaLib.Juego juego = new JuegoDeLaVidaLib.Juego();
-
-            Assert.Pass();
+            Assert.AreEqual("","");
         }
     }
 }
