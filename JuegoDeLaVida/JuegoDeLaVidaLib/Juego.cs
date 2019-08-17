@@ -17,6 +17,7 @@ namespace JuegoDeLaVidaLib
                 tablero[posX, posY] = false;
             if (tipo.Equals(TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE))
                 tablero[posX, posY] = true;
+            
             return tablero;
         }
         public char obtenerTipo(bool[,] tableroBase, int posX, int posY)
@@ -26,6 +27,8 @@ namespace JuegoDeLaVidaLib
             if (posX < tableroBase.GetLength(1)-1 && tableroBase[posX + 1, posY]) cantidadVecinaViva++;
             if (posY > 0 && tableroBase[posX, posY-1]) cantidadVecinaViva++;
             if (posY > tableroBase.GetLength(0) - 1 && tableroBase[posX, posY+1]) cantidadVecinaViva++;
+
+           
 
             if (cantidadVecinaViva < 2) return TIPO_VIVA_CONMENOSDEDOSVECINASVIVAS_MUERE;
             else return TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE;
