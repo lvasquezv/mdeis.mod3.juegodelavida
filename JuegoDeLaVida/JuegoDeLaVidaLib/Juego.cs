@@ -12,6 +12,33 @@ namespace JuegoDeLaVidaLib
         public const char TIPO_MUERTA_CONTRESVECINASVIVAS_VIVE = 'D';
         public const char TIPO_MUERTA_CONDIFERENTEDETRESVECINASVIVAS_MUERE = 'E';
 
+        public bool[,] generarTablero(bool[,] tableroBase)
+        {
+            bool[,] tablero = (bool[,])tableroBase.Clone();
+            for (int x = 0; x < tablero.GetLength(1); x++)
+            {
+                for (int y = 0; y < tablero.GetLength(0); y++)
+                {
+                    tablero[x, y] = generarCelda(tableroBase, x, y, tableroBase[x, y]);
+                }
+            }
+            return tablero;
+        }
+        private bool generarCelda(bool[,] tableroBase, int posX, int posY, bool estado)
+        {
+            char tipo = obtenerTipo(tableroBase, posX, posY, estado);
+            if (tipo.Equals(TIPO_VIVA_CONMENOSDEDOSVECINASVIVAS_MUERE))
+                return false;
+            if (tipo.Equals(TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE))
+                return true;
+            if (tipo.Equals(TIPO_VIVA_CONMASDETRESVECINASVIVAS_MUERE))
+                return false;
+            if (tipo.Equals(TIPO_MUERTA_CONTRESVECINASVIVAS_VIVE))
+                return true;
+            if (tipo.Equals(TIPO_MUERTA_CONDIFERENTEDETRESVECINASVIVAS_MUERE))
+                return false;
+            return estado;
+        }
         public bool[,] generar(bool[,] tableroBase, int posX, int posY, bool estado)
         {
             bool[,] tablero = (bool[,])tableroBase.Clone();
