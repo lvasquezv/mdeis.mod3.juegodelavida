@@ -41,7 +41,9 @@ namespace JuegoDeLaVidaPruebas
             tablero[3, 0] = false; tablero[3, 1] = false; tablero[3, 2] = false; tablero[3, 3] = true; tablero[3, 4] = false;
             tablero[4, 0] = false; tablero[4, 1] = false; tablero[4, 2] = false; tablero[4, 3] = false; tablero[4, 4] = false;
             // Hay una celula viva en la posicion 2,3  que tiene dos vecinas vivas : 1,3  y  3,3
-            bool[,] tableroActual = juego.generar(tablero, 1, 1);
+            bool[,] tableroActual = juego.generar(tablero, 2, 3);
+            tableroActual = juego.generar(tableroActual, 1, 3);
+            tableroActual = juego.generar(tableroActual, 3, 3);
             bool[,] tableroEsperado = new bool[5, 5];
             tableroEsperado[0, 0] = false; tableroEsperado[0, 1] = false; tableroEsperado[0, 2] = false; tableroEsperado[0, 3] = false; tableroEsperado[0, 4] = false;
             tableroEsperado[1, 0] = false; tableroEsperado[1, 1] = false; tableroEsperado[1, 2] = false; tableroEsperado[1, 3] = false; tableroEsperado[1, 4] = false;

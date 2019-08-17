@@ -6,15 +6,28 @@ namespace JuegoDeLaVidaLib
 {
     public class Juego
     {
+        public const char TIPO_VIVA_CONMENOSDEDOSVECINASVIVAS_MUERE = 'A';
+        public const char TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE = 'B';
+
         public bool[,] generar(bool[,] tableroBase, int posX, int posY)
         {
-            bool[,] tablero = new bool[5, 5];
-            tablero[0, 0] = false; tablero[0, 1] = false; tablero[0, 2] = false; tablero[0, 3] = false; tablero[0, 4] = false;
-            tablero[1, 0] = false; tablero[1, 1] = false; tablero[1, 2] = false; tablero[1, 3] = false; tablero[1, 4] = false;
-            tablero[2, 0] = false; tablero[2, 1] = false; tablero[2, 2] = false; tablero[2, 3] = false; tablero[2, 4] = false;
-            tablero[3, 0] = false; tablero[3, 1] = false; tablero[3, 2] = false; tablero[3, 3] = false; tablero[3, 4] = false;
-            tablero[4, 0] = false; tablero[4, 1] = false; tablero[4, 2] = false; tablero[4, 3] = false; tablero[4, 4] = false;
+            bool[,] tablero = (bool[,])tableroBase.Clone();
+            if (obtenerTipo(tableroBase, posX, posY).Equals(TIPO_VIVA_CONMENOSDEDOSVECINASVIVAS_MUERE))
+                tablero[posX, posY] = false;
+            if (obtenerTipo(tableroBase, posX, posY).Equals(TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE))
+                tablero[posX, posY] = true;
             return tablero;
+        }
+        public char obtenerTipo(bool[,] tableroBase, int posX, int posY)
+        {
+            int cantidadVecinaViva = 0;
+            if (posX > 0 && tableroBase[posX - 1, posY]) cantidadVecinaViva++;
+            if (posX < tableroBase.GetLength(1)-1 && tableroBase[posX + 1, posY]) cantidadVecinaViva++;
+            if (posY > 0 && tableroBase[posX, posY-1]) cantidadVecinaViva++;
+            if (posY > tableroBase.GetLength(0) - 1 && tableroBase[posX, posY+1]) cantidadVecinaViva++;
+
+            if (cantidadVecinaViva < 2) return TIPO_VIVA_CONMENOSDEDOSVECINASVIVAS_MUERE;
+            else return TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE;
         }
     }
 }
