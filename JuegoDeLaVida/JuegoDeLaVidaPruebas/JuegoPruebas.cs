@@ -67,7 +67,6 @@ namespace JuegoDeLaVidaPruebas
             // Hay una celula viva en la posicion 2,3  que tiene dos vecinas vivas : 1,3  y  3,3
             bool[,] tableroActual = juego.generar(tablero, 2, 3);
             tableroActual = juego.generar(tableroActual, 1, 3);
-            tableroActual = juego.generar(tableroActual, 2, 3);
             tableroActual = juego.generar(tableroActual, 3, 3);
             tableroActual = juego.generar(tableroActual, 2, 4);
             bool[,] tableroEsperado = new bool[5, 5];

@@ -8,6 +8,7 @@ namespace JuegoDeLaVidaLib
     {
         public const char TIPO_VIVA_CONMENOSDEDOSVECINASVIVAS_MUERE = 'A';
         public const char TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE = 'B';
+        public const char TIPO_VIVA_CONMASDETRESVECINASVIVAS_MUERE = 'C';
 
         public bool[,] generar(bool[,] tableroBase, int posX, int posY)
         {
@@ -17,6 +18,8 @@ namespace JuegoDeLaVidaLib
                 tablero[posX, posY] = false;
             if (tipo.Equals(TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE))
                 tablero[posX, posY] = true;
+            if (tipo.Equals(TIPO_VIVA_CONMASDETRESVECINASVIVAS_MUERE))
+                tablero[posX, posY] = false;
             
             return tablero;
         }
@@ -26,12 +29,17 @@ namespace JuegoDeLaVidaLib
             if (posX > 0 && tableroBase[posX - 1, posY]) cantidadVecinaViva++;
             if (posX < tableroBase.GetLength(1)-1 && tableroBase[posX + 1, posY]) cantidadVecinaViva++;
             if (posY > 0 && tableroBase[posX, posY-1]) cantidadVecinaViva++;
-            if (posY > tableroBase.GetLength(0) - 1 && tableroBase[posX, posY+1]) cantidadVecinaViva++;
+            if (posY < tableroBase.GetLength(0) - 1 && tableroBase[posX, posY+1]) cantidadVecinaViva++;
 
-           
+
+            if (posX > 0 && posY > 0 && tableroBase[posX - 1, posY - 1]) cantidadVecinaViva++;
+            if (posX > 0 && posY < tableroBase.GetLength(0) - 1 && tableroBase[posX - 1, posY + 1]) cantidadVecinaViva++;
+            if (posX < tableroBase.GetLength(1) - 1 && posY > 0 && tableroBase[posX + 1, posY - 1]) cantidadVecinaViva++;
+            if (posX < tableroBase.GetLength(1) - 1 && posY < tableroBase.GetLength(0) - 1 && tableroBase[posX + 1, posY + 1]) cantidadVecinaViva++;
 
             if (cantidadVecinaViva < 2) return TIPO_VIVA_CONMENOSDEDOSVECINASVIVAS_MUERE;
-            else return TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE;
+            else if (cantidadVecinaViva < 4) return TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE;
+            else return TIPO_VIVA_CONMASDETRESVECINASVIVAS_MUERE;
         }
     }
 }
