@@ -12,9 +12,10 @@ namespace JuegoDeLaVidaLib
         public bool[,] generar(bool[,] tableroBase, int posX, int posY)
         {
             bool[,] tablero = (bool[,])tableroBase.Clone();
-            if (obtenerTipo(tableroBase, posX, posY).Equals(TIPO_VIVA_CONMENOSDEDOSVECINASVIVAS_MUERE))
+            char tipo = obtenerTipo(tableroBase, posX, posY);
+            if (tipo.Equals(TIPO_VIVA_CONMENOSDEDOSVECINASVIVAS_MUERE))
                 tablero[posX, posY] = false;
-            if (obtenerTipo(tableroBase, posX, posY).Equals(TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE))
+            if (tipo.Equals(TIPO_VIVA_CONDOSTRESVECINASVIVAS_VIVE))
                 tablero[posX, posY] = true;
             return tablero;
         }
