@@ -16,7 +16,7 @@ namespace JuegoDeLaVidaWin
         public static Color CELDA_MUERTA = Color.Black;
         public static void GraficarTablero(Form forma, int initX, int initY, int celda, bool[,] tablero)
         {
-            GraficarCuadro(forma, FONDO, initX, initY, initX + (tablero.GetLength(1) * celda), initY + (tablero.GetLength(0) * celda));
+            //GraficarCuadro(forma, FONDO, initX, initY, initX + (tablero.GetLength(1) * celda), initY + (tablero.GetLength(0) * celda));
             for (int c = 0; c < tablero.GetLength(1); c++)
             {
                 for (int f = 0; f < tablero.GetLength(0); f++)

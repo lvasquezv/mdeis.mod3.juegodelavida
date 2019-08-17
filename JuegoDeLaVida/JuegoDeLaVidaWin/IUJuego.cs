@@ -29,8 +29,8 @@ namespace JuegoDeLaVidaWin
             timer1.Stop();
             _iniX = 10;
             _iniY = 100;
-            //_tablero = new bool[int.Parse(txCantColumnas.Text), int.Parse(txCantFilas.Text)];
-            _tablero = new bool[25, 25];
+            _tablero = new bool[int.Parse(txCantColumnas.Text), int.Parse(txCantFilas.Text)];
+            //_tablero = new bool[25, 25];
             _tablero[0, 0] = false; _tablero[0, 1] = false; _tablero[0, 2] = false; _tablero[0, 3] = false; _tablero[0, 4] = false;
             _tablero[1, 0] = false; _tablero[1, 1] = true; _tablero[1, 2] = false; _tablero[1, 3] = false; _tablero[1, 4] = true;
             _tablero[2, 0] = false; _tablero[2, 1] = true; _tablero[2, 2] = false; _tablero[2, 3] = false; _tablero[2, 4] = true;

@@ -35,19 +35,18 @@
             this.txCantColumnas = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.txCantFilas = new System.Windows.Forms.ToolStripTextBox();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnEjecutar = new System.Windows.Forms.ToolStripButton();
-            this.btnAtras = new System.Windows.Forms.ToolStripButton();
-            this.btnPausar = new System.Windows.Forms.ToolStripButton();
-            this.btnSiguiente = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.cmbCelda = new System.Windows.Forms.ToolStripComboBox();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
+            this.btnEjecutar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
+            this.btnPausar = new System.Windows.Forms.ToolStripButton();
+            this.btnSiguiente = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.cmbIntervaloTiempoEnSegundos = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,13 +64,12 @@
             this.toolStripLabel5,
             this.toolStripSeparator1,
             this.toolStripLabel6,
+            this.toolStripLabel4,
+            this.cmbIntervaloTiempoEnSegundos,
             this.btnEjecutar,
             this.toolStripLabel7,
-            this.btnAtras,
             this.btnPausar,
-            this.btnSiguiente,
-            this.toolStripLabel4,
-            this.cmbIntervaloTiempoEnSegundos});
+            this.btnSiguiente});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 39);
@@ -88,7 +86,7 @@
             // 
             this.txCantColumnas.Name = "txCantColumnas";
             this.txCantColumnas.Size = new System.Drawing.Size(50, 39);
-            this.txCantColumnas.Text = "5";
+            this.txCantColumnas.Text = "25";
             // 
             // toolStripLabel2
             // 
@@ -100,67 +98,7 @@
             // 
             this.txCantFilas.Name = "txCantFilas";
             this.txCantFilas.Size = new System.Drawing.Size(50, 39);
-            this.txCantFilas.Text = "5";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(36, 36);
-            this.btnNuevo.Text = "Inicializar";
-            this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
-            // 
-            // btnEjecutar
-            // 
-            this.btnEjecutar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEjecutar.Image = ((System.Drawing.Image)(resources.GetObject("btnEjecutar.Image")));
-            this.btnEjecutar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnEjecutar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEjecutar.Name = "btnEjecutar";
-            this.btnEjecutar.Size = new System.Drawing.Size(36, 36);
-            this.btnEjecutar.Text = "Iniciar";
-            this.btnEjecutar.Click += new System.EventHandler(this.BtnEjecutar_Click);
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAtras.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.Image")));
-            this.btnAtras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnAtras.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(28, 36);
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.Visible = false;
-            // 
-            // btnPausar
-            // 
-            this.btnPausar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPausar.Image = ((System.Drawing.Image)(resources.GetObject("btnPausar.Image")));
-            this.btnPausar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnPausar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPausar.Name = "btnPausar";
-            this.btnPausar.Size = new System.Drawing.Size(28, 36);
-            this.btnPausar.Text = "Pausar";
-            this.btnPausar.Click += new System.EventHandler(this.BtnPausar_Click);
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
-            this.btnSiguiente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnSiguiente.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(28, 36);
-            this.btnSiguiente.Text = "Siguiente";
-            this.btnSiguiente.Click += new System.EventHandler(this.BtnSiguiente_Click);
+            this.txCantFilas.Text = "25";
             // 
             // toolStripLabel3
             // 
@@ -185,6 +123,73 @@
             this.cmbCelda.Size = new System.Drawing.Size(75, 39);
             this.cmbCelda.Text = "10";
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(36, 36);
+            this.btnNuevo.Text = "Inicializar";
+            this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(16, 36);
+            this.toolStripLabel5.Text = "   ";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.Size = new System.Drawing.Size(16, 36);
+            this.toolStripLabel6.Text = "   ";
+            // 
+            // btnEjecutar
+            // 
+            this.btnEjecutar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEjecutar.Image = ((System.Drawing.Image)(resources.GetObject("btnEjecutar.Image")));
+            this.btnEjecutar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnEjecutar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEjecutar.Name = "btnEjecutar";
+            this.btnEjecutar.Size = new System.Drawing.Size(36, 36);
+            this.btnEjecutar.Text = "Iniciar";
+            this.btnEjecutar.Click += new System.EventHandler(this.BtnEjecutar_Click);
+            // 
+            // toolStripLabel7
+            // 
+            this.toolStripLabel7.Name = "toolStripLabel7";
+            this.toolStripLabel7.Size = new System.Drawing.Size(16, 36);
+            this.toolStripLabel7.Text = "   ";
+            // 
+            // btnPausar
+            // 
+            this.btnPausar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPausar.Image = ((System.Drawing.Image)(resources.GetObject("btnPausar.Image")));
+            this.btnPausar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnPausar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPausar.Name = "btnPausar";
+            this.btnPausar.Size = new System.Drawing.Size(28, 36);
+            this.btnPausar.Text = "Pausar";
+            this.btnPausar.Click += new System.EventHandler(this.BtnPausar_Click);
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
+            this.btnSiguiente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSiguiente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(28, 36);
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.Click += new System.EventHandler(this.BtnSiguiente_Click);
+            // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
@@ -207,24 +212,6 @@
             this.cmbIntervaloTiempoEnSegundos.Name = "cmbIntervaloTiempoEnSegundos";
             this.cmbIntervaloTiempoEnSegundos.Size = new System.Drawing.Size(75, 39);
             this.cmbIntervaloTiempoEnSegundos.Text = "1";
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(16, 36);
-            this.toolStripLabel5.Text = "   ";
-            // 
-            // toolStripLabel6
-            // 
-            this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(16, 36);
-            this.toolStripLabel6.Text = "   ";
-            // 
-            // toolStripLabel7
-            // 
-            this.toolStripLabel7.Name = "toolStripLabel7";
-            this.toolStripLabel7.Size = new System.Drawing.Size(16, 36);
-            this.toolStripLabel7.Text = "   ";
             // 
             // timer1
             // 
@@ -258,7 +245,6 @@
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnEjecutar;
-        private System.Windows.Forms.ToolStripButton btnAtras;
         private System.Windows.Forms.ToolStripButton btnPausar;
         private System.Windows.Forms.ToolStripButton btnSiguiente;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
